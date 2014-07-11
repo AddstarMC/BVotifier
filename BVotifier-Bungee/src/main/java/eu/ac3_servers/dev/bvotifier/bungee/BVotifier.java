@@ -16,7 +16,7 @@ import eu.ac3_servers.dev.bvotifier.bungee.configuration.BVConfig;
 import eu.ac3_servers.dev.bvotifier.bungee.model.VoteListener;
 import eu.ac3_servers.dev.bvotifier.bungee6.commands._BVCommand;
 import eu.ac3_servers.dev.bvotifier.bungee6.commands._testVoteCommand;
-import net.komputerking.updater.Updater;
+import net.komputerking.updater.*;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.scheduler.ScheduledTask;
 
@@ -118,7 +118,7 @@ public class BVotifier extends Plugin {
 		if(updaterEnabled){
 			
 			d("Updater is being initialised!");
-			Updater updater = new Updater(this.ID, this);
+			UpdaterB updater = new UpdaterB(this.ID, this);
 			d("Using ID: " + this.ID);
 			updater.performUpdateCheck();
 			
