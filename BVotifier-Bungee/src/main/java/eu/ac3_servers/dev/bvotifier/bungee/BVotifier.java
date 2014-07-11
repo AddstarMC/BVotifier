@@ -16,6 +16,7 @@ import eu.ac3_servers.dev.bvotifier.bungee.configuration.BVConfig;
 import eu.ac3_servers.dev.bvotifier.bungee.model.VoteListener;
 import eu.ac3_servers.dev.bvotifier.bungee6.commands._BVCommand;
 import eu.ac3_servers.dev.bvotifier.bungee6.commands._testVoteCommand;
+import net.komputerking.updater.Updater;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.scheduler.ScheduledTask;
 
@@ -28,6 +29,8 @@ import net.md_5.bungee.api.scheduler.ScheduledTask;
  * @author Kramer Campbell
  */
 public class BVotifier extends Plugin {
+
+	private static final String ID = "bvotifier.596";
 
 	/** The Votifier instance. */
 	private static BVotifier instance;
@@ -59,6 +62,7 @@ public class BVotifier extends Plugin {
 
 	private ScheduledTask voteReceiverTask;
 	
+	@SuppressWarnings("static-access")
 	@Override
 	public void onEnable() {
 		BVotifier.instance = this;
@@ -100,14 +104,24 @@ public class BVotifier extends Plugin {
 		
 		String host = cfg.getConfig().getString("bungee.hostname");
 		int port = cfg.getConfig().getInt("bungee.port");
-		debug = cfg.getConfig().getBoolean("bungee.debugging");
+		debug = cfg.getConfig().getBoolean("both.debug");
 		this.threshold = cfg.getConfig().getBoolean("bungee.enableThreshold");
 		this.thresholdTime = cfg.getConfig().getLong("bungee.thresholdTime");
+		boolean updaterEnabled = cfg.getConfig().getBoolean("both.updater");
 
 		if (debug){
 			getLogger().info("DEBUG mode enabled!");
 			getLogger().info("Host: " + host);
 			getLogger().info("Port: " + port);
+		}
+		
+		if(updaterEnabled){
+			
+			d("Updater is being initialised!");
+			Updater updater = new Updater(this.ID, this);
+			d("Using ID: " + this.ID);
+			updater.performUpdateCheck();
+			
 		}
 		
 		// Initialize the receiver.
@@ -198,6 +212,16 @@ public class BVotifier extends Plugin {
 
 	public boolean isDebug() {
 		return debug;
+	}
+	
+	public void d(Object... text){
+		
+		for (Object object : text) {
+			
+			getLogger().info((new StringBuilder("[DEBUG] ").append(object)).toString());
+			
+		}
+		
 	}
 	
 }

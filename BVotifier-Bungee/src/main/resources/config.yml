@@ -7,7 +7,6 @@ bungee:
     # These options are for bungeecord only.
     hostname: '0.0.0.0'
     port: 8192
-    debugging: false
 
     # The below is currently experimental.
     # Enable at your own risk.
@@ -18,6 +17,6 @@ bungee:
     # If this is true, then this will be compatable with 1.6 bungeecord.
     StartupOptions:
         v1_6: false
-bukkit:
-    # These options are for bukkit only.
+both:
     debug: false
+    updater: true

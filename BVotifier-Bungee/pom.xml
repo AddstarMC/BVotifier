@@ -14,5 +14,10 @@
   		<version>1.7-SNAPSHOT</version>
   		<scope>compile</scope>
   	</dependency>
+  	<dependency>
+  		<groupId>net.komputerking</groupId>
+  		<artifactId>Updater-B</artifactId>
+  		<version>1.0.0</version>
+  	</dependency>
   </dependencies>
 </project>

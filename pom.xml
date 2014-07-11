@@ -30,6 +30,10 @@
   		<id>OSS-Repo</id>
   		<url>https://oss.sonatype.org/content/groups/public/</url>
   	</repository>
+  	<repository>
+        <id>komp-king</id>
+        <url>http://repo.kompking.info/</url> 
+     </repository>
   </repositories>
   <modules>
   	<module>BVotifier-Bungee</module>

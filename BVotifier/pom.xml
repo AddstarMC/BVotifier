@@ -39,6 +39,8 @@
 		            <includes>
 		                <include>eu.ac3-servers.dev:BVotifier-Bungee</include>
 		                <include>eu.ac3-servers.dev:BVotifier-Bukkit</include>
+		                <include>net.komputerking:Updater</include>
+		                <include>net.komputerking:Updater-B</include>
 		            </includes>
 		        </artifactSet>
 		    </configuration>
