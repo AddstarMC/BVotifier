@@ -92,6 +92,7 @@ public class BVotifier extends Plugin {
 		} catch (Exception e) {
 			gracefulExit();
 			e.printStackTrace();
+			return;
 		}
 		
 		
@@ -103,13 +104,15 @@ public class BVotifier extends Plugin {
 		this.threshold = cfg.getConfig().getBoolean("bungee.enableThreshold");
 		this.thresholdTime = cfg.getConfig().getLong("bungee.thresholdTime");
 
-		if (debug)
+		if (debug){
 			getLogger().info("DEBUG mode enabled!");
+			getLogger().info("Host: " + host);
+			getLogger().info("Port: " + port);
+		}
 		
 		// Initialize the receiver.
 		try {
 			voteReceiver = new VoteReceiver(this, host, port);
-			voteReceiver.initialize();
 			voteReceiverTask = getProxy().getScheduler().runAsync(this, voteReceiver);
 			if(cfg.getConfig().getBoolean("StartupOptions.v16")){
 				getProxy().getPluginManager().registerCommand(this, new testVoteCommand(this));

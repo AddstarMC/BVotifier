@@ -77,7 +77,7 @@ public class VoteReceiver implements Runnable {
 		initialize();
 	}
 
-	public void initialize() throws Exception {
+	private void initialize() throws Exception {
 		try {
 			server = new ServerSocket();
 			server.bind(new InetSocketAddress(host, port));
