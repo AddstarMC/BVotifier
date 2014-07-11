@@ -16,7 +16,7 @@
  * along with Votifier.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.vexsoftware.votifier.bungee.crypto;
+package com.vexsoftware.votifier.crypto;
 
 import java.io.File;
 import java.io.FileInputStream;

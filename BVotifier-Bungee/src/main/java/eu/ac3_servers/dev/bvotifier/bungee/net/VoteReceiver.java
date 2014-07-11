@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.crypto.BadPaddingException;
 
-import com.vexsoftware.votifier.bungee.crypto.RSA;
+import com.vexsoftware.votifier.crypto.RSA;
 
 import eu.ac3_servers.dev.bvotifier.bungee.*;
 import eu.ac3_servers.dev.bvotifier.bungee.model.*;

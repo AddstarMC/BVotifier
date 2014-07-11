@@ -6,8 +6,8 @@ import java.security.KeyPair;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.vexsoftware.votifier.bungee.crypto.RSAIO;
-import com.vexsoftware.votifier.bungee.crypto.RSAKeygen;
+import com.vexsoftware.votifier.crypto.RSAIO;
+import com.vexsoftware.votifier.crypto.RSAKeygen;
 
 import eu.ac3_servers.dev.bvotifier.bungee.relay.VoteRelay;
 import eu.ac3_servers.dev.bvotifier.bungee.net.VoteReceiver;
@@ -95,13 +95,13 @@ public class BVotifier extends Plugin {
 		}
 		
 		
-		this.cfg = new BVConfig(this);		
+		this.cfg = new BVConfig(this);
 		
-		String host = cfg.getConfig().getString("hostname");
-		int port = cfg.getConfig().getInt("port");
-		debug = cfg.getConfig().getBoolean("debug");
-		this.threshold = cfg.getConfig().getBoolean("enableThreshold");
-		this.thresholdTime = cfg.getConfig().getLong("thresholdTime");
+		String host = cfg.getConfig().getString("bungee.hostname");
+		int port = cfg.getConfig().getInt("bungee.port");
+		debug = cfg.getConfig().getBoolean("bungee.debugging");
+		this.threshold = cfg.getConfig().getBoolean("bungee.enableThreshold");
+		this.thresholdTime = cfg.getConfig().getLong("bungee.thresholdTime");
 
 		if (debug)
 			getLogger().info("DEBUG mode enabled!");

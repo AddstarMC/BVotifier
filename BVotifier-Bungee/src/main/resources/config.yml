@@ -20,4 +20,4 @@ bungee:
         v1_6: false
 bukkit:
     # These options are for bukkit only.
-    debugging: false
+    debug: false
