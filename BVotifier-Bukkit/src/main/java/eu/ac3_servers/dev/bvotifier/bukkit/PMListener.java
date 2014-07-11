@@ -7,8 +7,8 @@ import java.io.IOException;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
-import com.vexsoftware.votifier.bukkit.model.Vote;
-import com.vexsoftware.votifier.bukkit.model.VotifierEvent;
+import com.vexsoftware.votifier.model.Vote;
+import com.vexsoftware.votifier.model.VotifierEvent;
 
 public class PMListener implements PluginMessageListener {
 	
