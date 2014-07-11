@@ -1,0 +1,4 @@
+name: BVotifier
+main: eu.ac3_servers.dev.bvotifier.bungee.BVotifier
+version: 1.0.0-SNAPSHOT
+author: acecheesecr14
