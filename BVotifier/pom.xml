@@ -47,4 +47,17 @@
 		</plugin>
 	</plugins>
   </build>
+  <ciManagement>
+  	<notifiers>
+  		<notifier>
+  			<address>ace@ac3-servers.eu</address>
+  			<sendOnError>true</sendOnError>
+  			<sendOnFailure>true</sendOnFailure>
+  			<sendOnSuccess>false</sendOnSuccess>
+  			<sendOnWarning>false</sendOnWarning>
+  		</notifier>
+  	</notifiers>
+  	<system>Jenkins</system>
+  	<url>http://ci.ac3-servers.eu/</url>
+  </ciManagement>
 </project>

@@ -5,6 +5,24 @@
     <artifactId>BVotifier-Master</artifactId>
     <version>SNAPSHOT</version>
   </parent>
+  <build>
+  	<resources>
+		<resource>
+			<directory>src/main/resources</directory>
+			<filtering>true</filtering>
+			<includes>
+				<include>plugin.yml</include>
+			</includes>
+		</resource>
+		<resource>
+			<directory>src/main/resources</directory>
+			<filtering>false</filtering>
+			<excludes>
+				<exclude>plugin.yml</exclude>
+			</excludes>
+		</resource>
+	</resources>
+  </build>
   <artifactId>BVotifier-Bukkit</artifactId>
   <dependencies>
 	<dependency>
