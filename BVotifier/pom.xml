@@ -35,12 +35,15 @@
 		        </execution>
 		    </executions>
 		    <configuration>
+		    	<minimizeJar>true</minimizeJar>
 		        <artifactSet>
 		            <includes>
 		                <include>eu.ac3-servers.dev:BVotifier-Bungee</include>
 		                <include>eu.ac3-servers.dev:BVotifier-Bukkit</include>
 		                <include>net.komputerking:Updater</include>
 		                <include>net.komputerking:Updater-B</include>
+		                <include>commons-io:commons-io</include>
+						<include>com.google.code.gson:gson</include>
 		            </includes>
 		        </artifactSet>
 		    </configuration>
