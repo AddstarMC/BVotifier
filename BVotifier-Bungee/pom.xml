@@ -6,7 +6,7 @@
     <version>SNAPSHOT</version>
   </parent>
   <artifactId>BVotifier-Bungee</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <build>
   	<resources>
 		<resource>
