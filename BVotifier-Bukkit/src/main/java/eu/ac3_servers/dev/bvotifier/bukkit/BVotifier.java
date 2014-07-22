@@ -46,7 +46,9 @@ public class BVotifier extends Votifier {
 			
 		}
 		
-		this.getServer().getMessenger().registerIncomingPluginChannel(this, MessageChannel, new PMListener(this));
+		this.pmlistener = new PMListener(this);
+		
+		this.getServer().getMessenger().registerIncomingPluginChannel(this, MessageChannel, this.pmlistener);
 		
 	}
 	

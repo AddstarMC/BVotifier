@@ -10,10 +10,10 @@ import com.vexsoftware.votifier.crypto.RSAIO;
 import com.vexsoftware.votifier.crypto.RSAKeygen;
 
 import eu.ac3_servers.dev.bvotifier.bungee.relay.VoteRelay;
-import eu.ac3_servers.dev.bvotifier.bungee.net.VoteReceiver;
 import eu.ac3_servers.dev.bvotifier.bungee.commands.*;
 import eu.ac3_servers.dev.bvotifier.bungee.configuration.BVConfig;
 import eu.ac3_servers.dev.bvotifier.bungee.model.VoteListener;
+import eu.ac3_servers.dev.bvotifier.bungee.net.VoteReceiver;
 import eu.ac3_servers.dev.bvotifier.bungee6.commands._BVCommand;
 import eu.ac3_servers.dev.bvotifier.bungee6.commands._testVoteCommand;
 import net.komputerking.updater.*;
