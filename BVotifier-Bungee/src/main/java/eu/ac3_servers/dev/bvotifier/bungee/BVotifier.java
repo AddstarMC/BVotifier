@@ -1,7 +1,7 @@
 package eu.ac3_servers.dev.bvotifier.bungee;
 
 import java.io.File;
-import java.io.IOException;
+//import java.io.IOException;
 import java.security.KeyPair;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +58,7 @@ public class BVotifier extends Plugin {
 
 	public long thresholdTime;
 
-	public Metrics metrics;
+//	public Metrics metrics;
 
 	private ScheduledTask voteReceiverTask;
 	
@@ -68,14 +68,15 @@ public class BVotifier extends Plugin {
 		BVotifier.instance = this;
 		
 		getLogger().info("Starting metrics.");
-		try {
-		    this.metrics = new Metrics(this);
-		    this.metrics.start();
-		    getLogger().info("Started metrics.");
-		} catch (IOException e) {
-			getLogger().severe("Starting metrics has not succeeded!");
-			e.printStackTrace();
-		}
+//		try {
+//		    this.metrics = new Metrics(this);
+//		    this.metrics.start();
+//		    getLogger().info("Started metrics.");
+//		} catch (IOException e) {
+//			getLogger().severe("Starting metrics has not succeeded!");
+//			e.printStackTrace();
+//		}
+		getLogger().severe("Metrics is currently disabled in this version of BVotifier.");
 		
 		version = getDescription().getVersion();
 		

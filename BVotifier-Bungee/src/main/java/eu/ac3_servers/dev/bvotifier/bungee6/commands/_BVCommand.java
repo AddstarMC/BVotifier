@@ -1,11 +1,12 @@
 package eu.ac3_servers.dev.bvotifier.bungee6.commands;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Properties;
+//import java.io.FileInputStream;
+//import java.io.FileOutputStream;
+//import java.io.IOException;
+//import java.util.Properties;
 
 import eu.ac3_servers.dev.bvotifier.bungee.BVotifier;
+import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.plugin.Command;
 
@@ -24,24 +25,25 @@ public class _BVCommand extends Command {
 		
 		if(args.length == 1 && args[0].equalsIgnoreCase("metrics")){
 			if(!sender.hasPermission("BVotifier.admin")) return;
-			Properties properties = new Properties();
-			try {
-				properties.load(new FileInputStream(this.plugin.metrics.getConfigFile()));
-				String optout = properties.getProperty("opt-out");
-				if(optout == null) return;
-				if(optout.equalsIgnoreCase("false")){
-					properties.setProperty("opt-out", "true");
-					properties.store(new FileOutputStream(this.plugin.metrics.getConfigFile()), "http://mcstats.org");
-					sender.sendMessage("Turned off plugin metrics for Votifier.");
-				}else{
-					properties.setProperty("opt-out", "false");
-					properties.store(new FileOutputStream(this.plugin.metrics.getConfigFile()), "http://mcstats.org");
-					sender.sendMessage("Turned on plugin metrics for Votifier.");
-				}
-			} catch (IOException e) {
-				sender.sendMessage("Something went wrong. Please check the logs for more.");
-				e.printStackTrace();
-			}
+//			Properties properties = new Properties();
+//			try {
+//				properties.load(new FileInputStream(this.plugin.metrics.getConfigFile()));
+//				String optout = properties.getProperty("opt-out");
+//				if(optout == null) return;
+//				if(optout.equalsIgnoreCase("false")){
+//					properties.setProperty("opt-out", "true");
+//					properties.store(new FileOutputStream(this.plugin.metrics.getConfigFile()), "http://mcstats.org");
+//					sender.sendMessage("Turned off plugin metrics for Votifier.");
+//				}else{
+//					properties.setProperty("opt-out", "false");
+//					properties.store(new FileOutputStream(this.plugin.metrics.getConfigFile()), "http://mcstats.org");
+//					sender.sendMessage("Turned on plugin metrics for Votifier.");
+//				}
+//			} catch (IOException e) {
+//				sender.sendMessage("Something went wrong. Please check the logs for more.");
+//				e.printStackTrace();
+//			}
+			sender.sendMessage(ChatColor.RED.toString() + "Metrics is currently disabled in this version of BVotifier!");
 			
 		}else{
 			
