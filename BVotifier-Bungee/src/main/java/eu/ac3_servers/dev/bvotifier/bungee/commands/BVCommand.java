@@ -47,7 +47,7 @@ public class BVCommand extends Command {
 //				sender.sendMessage(tcErrr);
 //				e.printStackTrace();
 //			}
-			sender.sendMessage(ChatColor.RED.toString() + "Metrics is currently disabled in this version of BVotifier!");
+			sender.sendMessage(ChatColor.RED.toString() + "Metrics is currently \"jammed on\" in this version of BVotifier!");
 			
 		}else{
 			
@@ -59,7 +59,7 @@ public class BVCommand extends Command {
 			
 			sender.sendMessage(tc0);
 			sender.sendMessage(tc1);
-			if(!sender.hasPermission("BVotifier.admin")) return;
+/*			if(!sender.hasPermission("BVotifier.admin")) return;
 			
 			TextComponent tc2 = new TextComponent("Toggle plugin metrics with the command");
 			TextComponent tc3 = new TextComponent("/bvotifer metrics");
@@ -67,7 +67,7 @@ public class BVCommand extends Command {
 			tc2.setColor(ChatColor.GREEN);
 			
 			sender.sendMessage(tc2);
-			sender.sendMessage(tc3);
+			sender.sendMessage(tc3);*/
 			
 		}
 
