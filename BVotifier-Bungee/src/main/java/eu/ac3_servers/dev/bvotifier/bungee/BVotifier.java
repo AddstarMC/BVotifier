@@ -61,6 +61,8 @@ public class BVotifier extends Plugin {
 //	public Metrics metrics;
 
 	private ScheduledTask voteReceiverTask;
+
+	private BungeeMetricsLite metrics;
 	
 	@SuppressWarnings("static-access")
 	@Override
@@ -68,6 +70,9 @@ public class BVotifier extends Plugin {
 		BVotifier.instance = this;
 		
 		getLogger().info("Starting metrics.");
+		this.metrics = new BungeeMetricsLite(this);
+		this.metrics.start();
+		getLogger().info("Started metrics.");
 //		try {
 //		    this.metrics = new Metrics(this);
 //		    this.metrics.start();
@@ -76,7 +81,7 @@ public class BVotifier extends Plugin {
 //			getLogger().severe("Starting metrics has not succeeded!");
 //			e.printStackTrace();
 //		}
-		getLogger().severe("Metrics is currently disabled in this version of BVotifier.");
+//		getLogger().severe("Metrics is currently disabled in this version of BVotifier.");
 		
 		version = getDescription().getVersion();
 		
@@ -155,6 +160,7 @@ public class BVotifier extends Plugin {
 	@Override
 	public void onDisable() {
 		
+		this.metrics.stop();
 		voteReceiver.shutdown();
 		voteReceiverTask.cancel();
 		
@@ -164,6 +170,7 @@ public class BVotifier extends Plugin {
 		getLogger().severe("Votifier did not initialize properly!");
 		voteReceiver.shutdown();
 		voteReceiverTask.cancel();
+		this.metrics.stop();
 	}
 
 	/**
