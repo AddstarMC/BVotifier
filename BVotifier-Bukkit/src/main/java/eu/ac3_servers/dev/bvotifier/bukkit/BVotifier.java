@@ -21,7 +21,7 @@ public class BVotifier extends Votifier {
 	
 	private static final String ID = "bvotifier.596";
 	
-	@SuppressWarnings("static-access")
+	@SuppressWarnings({ "static-access", "unused" })
 	@Override
 	public void onEnable() {
 		
@@ -37,7 +37,7 @@ public class BVotifier extends Votifier {
 			}
 		}
 		
-		if(getConfig().getBoolean("both.updater")){
+		if( false == true && getConfig().getBoolean("both.updater")){
 			
 			getLogger().info("[DEBUG] Updating with ID: " + this.ID);
 			Updater updater = new Updater(this.ID, this);
