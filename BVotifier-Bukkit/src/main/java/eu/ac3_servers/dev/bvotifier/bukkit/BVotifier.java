@@ -18,12 +18,17 @@ import com.vexsoftware.votifier.Votifier;
 public class BVotifier extends Votifier {
 	
 	public final String MessageChannel = "BVotifier";
+
+	private PMListener pmlistener;
 	
 	private static final String ID = "bvotifier.596";
 	
 	@SuppressWarnings({ "static-access", "unused" })
 	@Override
 	public void onEnable() {
+		super.onEnable();
+		
+		getVoteReceiver().shutdown();
 		
 		File cfg = new File(getDataFolder(), "config.yml");
 		if(!cfg.exists()){

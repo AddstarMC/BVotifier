@@ -23,6 +23,10 @@
   </build>
   <repositories>
   	<repository>
+  		<id>AC3-Servers-REPO</id>
+  		<url>http://ci.ac3-servers.eu/plugin/repository/everything/</url>
+  	</repository>
+  	<repository>
   		<id>SpigotMC-Repo</id>
   		<url>http://repo.md-5.net/content/repositories/snapshots/</url>
   	</repository>
