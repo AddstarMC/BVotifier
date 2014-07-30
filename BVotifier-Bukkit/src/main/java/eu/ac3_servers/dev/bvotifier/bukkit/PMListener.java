@@ -21,7 +21,7 @@ public class PMListener implements PluginMessageListener {
 	@Override
 	public void onPluginMessageReceived(String channel, Player player, byte[] message) {
 		
-		boolean debug = this.plugin.getConfig().getBoolean("bukkit.debug");
+		boolean debug = this.plugin.getBVConfig().getBoolean("bukkit.debug");
 		if(debug) this.plugin.getLogger().info("[DEBUG] Message received on: " + channel);
 		if(!channel.equals(this.plugin.MessageChannel)) return;
 		

@@ -31,7 +31,7 @@ public class BVConfig {
         if (!file.exists()) {
             try {
             	file.createNewFile();
-                try (InputStream is = getResourceAsStream("config.yml");
+                try (InputStream is = getResourceAsStream("bvconfig.yml");
                      OutputStream os = new FileOutputStream(file)) {
                     ByteStreams.copy(is, os);
                 }
