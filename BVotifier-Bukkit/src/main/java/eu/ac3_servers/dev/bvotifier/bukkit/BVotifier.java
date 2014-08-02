@@ -26,8 +26,10 @@ public class BVotifier extends Votifier {
 		super.onEnable();
 		
 		getVoteReceiver().shutdown();
+		getLogger().info("[BV] Shutting down the listener!");
 		
 		this.config = new BVConfig(this);
+		getLogger().info("[BV] Init BVConfig.");
 		
 		if( false == true && getBVConfig().getBoolean("both.updater")){
 			
@@ -39,8 +41,10 @@ public class BVotifier extends Votifier {
 		}
 		
 		this.pmlistener = new PMListener(this);
+		getLogger().info("[BV] Listening for the plugin message.");
 		
 		this.getServer().getMessenger().registerIncomingPluginChannel(this, MessageChannel, this.pmlistener);
+		getLogger().info("[BV] Registered \"" + this.MessageChannel + "\" as an incoming channel!");
 		
 	}
 	
