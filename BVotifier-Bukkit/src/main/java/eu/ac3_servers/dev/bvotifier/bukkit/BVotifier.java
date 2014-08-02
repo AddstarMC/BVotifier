@@ -18,8 +18,6 @@ public class BVotifier extends Votifier {
 	
 	public final String MessageChannel = "BVotifier";
 
-	private PMListener pmlistener;
-
 	private BVConfig config;
 	
 	private static final String ID = "bvotifier.596";
@@ -58,10 +56,7 @@ public class BVotifier extends Votifier {
 			
 		}
 		
-		this.pmlistener = new PMListener(this);
-		getLogger().info("[BV] Listening for the plugin message.");
-		
-		this.getServer().getMessenger().registerIncomingPluginChannel(this, MessageChannel, this.pmlistener);
+		this.getServer().getMessenger().registerIncomingPluginChannel(this, MessageChannel, new PMListener(this));
 		getLogger().info("[BV] Registered \"" + this.MessageChannel + "\" as an incoming channel!");
 		
 	}

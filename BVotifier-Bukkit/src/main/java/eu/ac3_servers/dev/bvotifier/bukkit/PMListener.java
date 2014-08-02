@@ -16,6 +16,7 @@ public class PMListener implements PluginMessageListener {
 
 	public PMListener(BVotifier plugin) {
 		this.plugin = plugin;
+		this.plugin.getLogger().info("[BV] Registered the PluginMessageListener.");
 	}
 
 	@Override
