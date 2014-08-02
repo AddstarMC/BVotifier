@@ -40,6 +40,7 @@ public class PMListener implements PluginMessageListener {
 			vote.setUsername(username);
 			
 			this.plugin.getServer().getPluginManager().callEvent(new VotifierEvent(vote));
+			this.plugin.getServer().getScheduler().runTaskAsynchronously(plugin, new VoifierListener(vote, plugin));
 			this.plugin.getLogger().info(vote.toString());
 			
 		} catch (IOException e) {

@@ -42,8 +42,8 @@
 		                <include>eu.ac3-servers.dev:BVotifier-Bukkit</include>
 		                <include>net.komputerking:Updater</include>
 		                <include>net.komputerking:Updater-B</include>
-		                <include>com.vexsoftware:votifier</include>
-		                <!-- 
+		                <!-- <include>com.vexsoftware:votifier</include>
+		                
 		                I don't think we need these!
 		                <include>commons-io:commons-io</include>
 						<include>com.google.code.gson:gson</include>

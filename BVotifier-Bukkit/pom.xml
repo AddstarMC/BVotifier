@@ -30,11 +30,11 @@
 	  <artifactId>spigot-api</artifactId>
 	  <version>1.7.9-R0.3-SNAPSHOT</version>
 	</dependency>
-	<dependency>
+<!-- 	<dependency>
 		<groupId>com.vexsoftware</groupId>
 		<artifactId>votifier</artifactId>
 		<version>1.9</version>
-	</dependency>
+	</dependency> -->
 	<dependency>
 		<groupId>net.komputerking</groupId>
 		<artifactId>Updater</artifactId>

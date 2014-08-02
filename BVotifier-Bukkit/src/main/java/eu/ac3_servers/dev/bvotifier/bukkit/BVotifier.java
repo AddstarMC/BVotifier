@@ -36,7 +36,7 @@ public class BVotifier extends Votifier {
 					FileUtils.deleteDirectory(getDataFolder());
 				} catch (IOException e) {
 					e.printStackTrace();
-					getLogger().severe("We couldn't delete the old " + getDataFolder().getName() + " please delete this manually!");
+					getLogger().severe("[BV] We couldn't delete the old \"plugins/" + getDataFolder().getName() + "\" folder please delete this manually!");
 				}
 			}
 		}
@@ -85,6 +85,8 @@ public class BVotifier extends Votifier {
 		}
 		return false;
 	}
+	
+	
 
 	public FileConfiguration getBVConfig() {
 		return this.config.getConfig();
