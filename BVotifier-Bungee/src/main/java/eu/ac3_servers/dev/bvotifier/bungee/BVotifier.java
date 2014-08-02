@@ -64,7 +64,7 @@ public class BVotifier extends Plugin {
 
 	private BungeeMetricsLite metrics;
 	
-	@SuppressWarnings("static-access")
+	@SuppressWarnings({ "static-access", "unused" })
 	@Override
 	public void onEnable() {
 		BVotifier.instance = this;
@@ -121,7 +121,7 @@ public class BVotifier extends Plugin {
 			getLogger().info("Port: " + port);
 		}
 		
-		if(updaterEnabled){
+		if(updaterEnabled && false == true){
 			
 			d("Updater is being initialised!");
 			UpdaterB updater = new UpdaterB(this.ID, this);
