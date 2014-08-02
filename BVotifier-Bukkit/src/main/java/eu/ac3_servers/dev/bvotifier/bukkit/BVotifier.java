@@ -1,7 +1,11 @@
 package eu.ac3_servers.dev.bvotifier.bukkit;
 
+import java.io.File;
+import java.io.IOException;
+
 import net.komputerking.updater.Updater;
 
+import org.apache.commons.io.FileUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -23,6 +27,20 @@ public class BVotifier extends Votifier {
 	@SuppressWarnings({ "static-access", "unused" })
 	@Override
 	public void onEnable() {
+		
+		if(getDataFolder().exists()){
+			File newConfigFile = new File(getDataFolder(), "bvconfig.yml");
+			
+			if(!newConfigFile.exists()){
+				try {
+					FileUtils.deleteDirectory(getDataFolder());
+				} catch (IOException e) {
+					e.printStackTrace();
+					getLogger().severe("We couldn't delete the old " + getDataFolder().getName() + " please delete this manually!");
+				}
+			}
+		}
+			
 		super.onEnable();
 		
 		getVoteReceiver().shutdown();
