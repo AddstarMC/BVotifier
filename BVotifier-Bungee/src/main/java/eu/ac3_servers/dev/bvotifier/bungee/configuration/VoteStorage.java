@@ -7,7 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.List;
+import java.util.Collection;
 
 import com.google.common.io.ByteStreams;
 
@@ -79,13 +79,15 @@ public class VoteStorage {
 			getConfig().set("votes."+ serverInfo.getName() + "." + vote.getTimeStamp() + ".name", vote.getUsername());
 			getConfig().set("votes."+ serverInfo.getName() + "." + vote.getTimeStamp() + ".address", vote.getAddress());
 			getConfig().set("votes."+ serverInfo.getName() + "." + vote.getTimeStamp() + ".service", vote.getServiceName());
+			BVotifier.getInstance().d("Stored", vote.toString());
 		}
+		saveConfig();
 		
 	}
 	
 	public void loadVotes(ServerInfo serverInfo){
 		
-		this.plugin.getProxy().getScheduler().runAsync(plugin, new LoadVoteTask(this.plugin, getConfig().getSection("votes"), serverInfo));
+		this.plugin.getProxy().getScheduler().runAsync(plugin, new LoadVoteTask(this.plugin, getConfig().getSection("votes."+serverInfo.getName()), serverInfo));
 		return;
 		
 	}
@@ -109,13 +111,13 @@ class LoadVoteTask implements Runnable {
 	@Override
 	public void run() {
 		String serverName = server.getName();
-		List<Long> index = section.getLongList(serverName);
-		for (Long time : index) {
+		Collection<String> index = section.getKeys();
+		for (String time : index) {
 			Vote vote = new Vote(
 					section.getString(serverName + "." + time + ".service"),
 					section.getString(serverName + "." + time + ".name"),
 					section.getString(serverName + "." + time + ".address"),
-					""+time.longValue()
+					time
 			);
 			BVotifier.getInstance().d(vote.toString());
 			

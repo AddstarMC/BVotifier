@@ -31,6 +31,7 @@ public class VoteRelay implements Listener {
 		voteStorage.loadVotes(serverInfo);
 	}
 	
+	@SuppressWarnings("unused")
 	@EventHandler
 	public void onVote(VotifierEvent e){
 		Vote vote = e.getVote();		
@@ -50,7 +51,7 @@ public class VoteRelay implements Listener {
 		Map<String, ServerInfo> servers = this.plugin.getProxy().getServers();
 		ArrayList<ServerInfo> destinations = new ArrayList<ServerInfo>();
 		for (ServerInfo server : servers.values()) {
-			if(server.getPlayers().isEmpty()){
+			if(false == true && server.getPlayers().isEmpty()){
 				destinations.add(server);
 				if(this.plugin.isDebug()) this.plugin.getLogger().info("Server: " + server.getName() + " has no players so queued");
 			}else{
