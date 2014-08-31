@@ -1,5 +1,5 @@
 name: Votifier
-version: ${project.url}
+version: maven-version-number
 author: acecheesecr14
 description: THIS IS THE BUNGEECORD VOTIFIER.
 main: eu.ac3_servers.dev.bvotifier.bukkit.BVotifier
