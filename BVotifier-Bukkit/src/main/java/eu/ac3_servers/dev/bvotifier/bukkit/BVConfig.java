@@ -42,6 +42,7 @@ public class BVConfig {
 		    if (defConfigStream != null) {
 		        YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
 		        customConfig.setDefaults(defConfig);
+		        customConfig.set("bungee", null);
 		    }
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();

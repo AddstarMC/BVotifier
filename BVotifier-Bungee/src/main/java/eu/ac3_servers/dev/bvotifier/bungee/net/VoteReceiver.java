@@ -124,7 +124,7 @@ public class VoteReceiver implements Runnable {
 				InputStream in = socket.getInputStream();
 
 				// Send them our version.
-				writer.write("VOTIFIER " + BVotifier.getInstance().getVersion());
+				writer.write("VOTIFIER " + BVotifier.getInstance().voteVersion);
 				writer.newLine();
 				writer.flush();
 

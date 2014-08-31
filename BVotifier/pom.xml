@@ -67,6 +67,7 @@
                 <configuration>
                     <file>target/classes/plugin.yml</file>
                     <file>target/classes/bungee.yml</file>
+                    <file>target/classes/bvconfig.yml</file>
                     <replacements>
                         <replacement>
                             <token>maven-version-number</token>

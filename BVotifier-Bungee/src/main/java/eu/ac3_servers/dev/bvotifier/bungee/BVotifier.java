@@ -63,6 +63,8 @@ public class BVotifier extends Plugin {
 	private ScheduledTask voteReceiverTask;
 
 	private BungeeMetricsLite metrics;
+
+	public String voteVersion = "1.9";
 	
 	@SuppressWarnings({ "static-access", "unused" })
 	@Override
@@ -113,6 +115,7 @@ public class BVotifier extends Plugin {
 		debug = cfg.getConfig().getBoolean("both.debug");
 		this.threshold = cfg.getConfig().getBoolean("bungee.enableThreshold");
 		this.thresholdTime = cfg.getConfig().getLong("bungee.thresholdTime");
+		this.voteVersion = cfg.getConfig().getString("bungee.voteVersion");
 		boolean updaterEnabled = cfg.getConfig().getBoolean("both.updater");
 
 		if (debug){

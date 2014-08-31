@@ -17,6 +17,11 @@ bungee:
     # If this is true, then this will be compatable with 1.6 bungeecord.
     StartupOptions:
         v1_6: false
+        
+    # The version that is sent with VERSION in the votifier protocool.
+    voteversion: '1.9'
 both:
     debug: false
     updater: true
+    # DO NOT CHANGE THIS UNLESS YOU WANT THE CONFIG RESET.
+    configVersion: maven-version-number
