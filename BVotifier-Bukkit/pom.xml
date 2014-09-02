@@ -10,42 +10,8 @@
 		<resource>
 			<directory>src/main/resources</directory>
 			<filtering>true</filtering>
-			<includes>
-				<include>plugin.yml</include>
-			</includes>
-		</resource>
-		<resource>
-			<directory>src/main/resources</directory>
-			<filtering>false</filtering>
-			<excludes>
-				<exclude>plugin.yml</exclude>
-			</excludes>
 		</resource>
 	</resources>
-	<plugins>
-		<plugin>
-        	<groupId>com.google.code.maven-replacer-plugin</groupId>
-            <artifactId>maven-replacer-plugin</artifactId>
-            <version>1.3.8</version>
-            <executions>
-                <execution>
-                    <phase>prepare-package</phase>
-                    <goals>
-                        <goal>replace</goal>
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <file>target/classes/plugin.yml</file>
-                <replacements>
-                    <replacement>
-                        <token>maven-version-number</token>
-                        <value>${project.version}</value>
-                    </replacement>
-                </replacements>
-            </configuration>
-        </plugin>
-	</plugins>
   </build>
   <artifactId>BVotifier-Bukkit</artifactId>
   <dependencies>

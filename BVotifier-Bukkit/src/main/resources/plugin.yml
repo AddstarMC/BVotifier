@@ -1,6 +1,6 @@
 name: Votifier
-version: maven-version-number
-author: acecheesecr14
+version: ${pom.version}
+author: Cory Redmond
 description: THIS IS THE BUNGEECORD VOTIFIER.
 main: eu.ac3_servers.dev.bvotifier.bukkit.BVotifier
 commands:

@@ -1,4 +1,4 @@
 name: BVotifier
 main: eu.ac3_servers.dev.bvotifier.bungee.BVotifier
-version: maven-version-number
+version: ${pom.version}
 author: acecheesecr14

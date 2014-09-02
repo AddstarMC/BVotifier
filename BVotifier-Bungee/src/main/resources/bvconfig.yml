@@ -1,4 +1,4 @@
-# Configuration for BVotifier.                    #
+# Configuration for BVotifier ${pom.version} .    #
 # Please use YAML only! NO TABS. 4 spaces instead.#
 ###################################################
 # Thanks, acecheesecr14.                          #
@@ -24,4 +24,4 @@ both:
     debug: false
     updater: true
     # DO NOT CHANGE THIS UNLESS YOU WANT THE CONFIG RESET.
-    configVersion: maven-version-number
+    configVersion: ${pom.version}
