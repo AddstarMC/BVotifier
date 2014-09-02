@@ -52,7 +52,7 @@
 		        </artifactSet>
 		    </configuration>
 		</plugin>
-		<plugin>
+		<!-- <plugin>
         	<groupId>com.google.code.maven-replacer-plugin</groupId>
             <artifactId>maven-replacer-plugin</artifactId>
             <version>1.3.8</version>
@@ -75,7 +75,7 @@
                     </replacement>
                 </replacements>
             </configuration>
-        </plugin>
+        </plugin> -->
 	</plugins>
   </build>
   <ciManagement>
