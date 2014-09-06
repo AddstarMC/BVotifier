@@ -1,0 +1,11 @@
+Disclaimer for BVotifier.
+
+I (Cory Redmond), did not create Votifier.
+
+These plugins contain content from Votifier, and also an edited version of the plugin.
+
+Votifier and all the code from these two plugins are both under the General Public Licence V3.0, 
+which can be found inside the jar as LICENCE.TXT
+
+Thanks alot.
+   Cory Redmond.
