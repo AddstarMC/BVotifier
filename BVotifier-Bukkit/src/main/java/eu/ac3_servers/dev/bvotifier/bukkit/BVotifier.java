@@ -20,7 +20,7 @@ public class BVotifier extends Votifier {
 
 	private BVConfig config;
 	
-	private static final String ID = "bvotifier.596";
+	private static final String ID = "596";
 	
 	@SuppressWarnings({ "static-access" })
 	@Override

@@ -30,7 +30,7 @@ import net.md_5.bungee.api.scheduler.ScheduledTask;
  */
 public class BVotifier extends Plugin {
 
-	private static final String ID = "bvotifier.596";
+	private static final String ID = "596";
 
 	/** The Votifier instance. */
 	private static BVotifier instance;
