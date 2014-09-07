@@ -12,6 +12,37 @@ BVotifier uses the Plugin Messaging Channel instead of opening any more ports, e
 ### Maven Integration ###
 
 
+```
+#!html
+
+  <repository>
+  	<id>AC3-Servers</id>
+  	<url>http://ci.ac3-servers.eu/plugin/repository/everything/</url>
+  </repository>
+  
+  <!-- Both Bukkit and BungeeCord -->
+  <dependency>
+  	<groupId>eu.ac3-servers.dev</groupId>
+  	<artifactId>BVotifier</artifactId>
+  	<version>SNAPSHOT</version>
+  </dependency>
+
+  <!-- BungeeCord Only. -->
+  <dependency>
+  	<groupId>eu.ac3-servers.dev</groupId>
+  	<artifactId>BVotifier-Bungee</artifactId>
+  	<version>1.0.6</version>
+  </dependency>
+
+  <!-- Bukkit Only. -->
+  <dependency>
+  	<groupId>eu.ac3-servers.dev</groupId>
+  	<artifactId>BVotifier-Bukkit</artifactId>
+  	<version>1.0.5</version>
+  </dependency>
+
+```
+
 
 ### How do I get set up? ###
 
