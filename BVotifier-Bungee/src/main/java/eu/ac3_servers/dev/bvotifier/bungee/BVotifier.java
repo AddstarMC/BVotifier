@@ -65,6 +65,8 @@ public class BVotifier extends Plugin {
 	private BungeeMetricsLite metrics;
 
 	public String voteVersion = "1.9";
+
+	public boolean emptysend;
 	
 	@SuppressWarnings({ "static-access", "unused" })
 	@Override
@@ -117,6 +119,7 @@ public class BVotifier extends Plugin {
 		this.thresholdTime = cfg.getConfig().getLong("bungee.thresholdTime");
 		this.voteVersion = cfg.getConfig().getString("bungee.voteVersion");
 		boolean updaterEnabled = cfg.getConfig().getBoolean("both.updater");
+		this.emptysend = cfg.getConfig().getBoolean("both.emptysend");
 
 		if (debug){
 			getLogger().info("DEBUG mode enabled!");
