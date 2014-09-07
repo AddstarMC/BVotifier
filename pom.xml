@@ -2,7 +2,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>eu.ac3-servers.dev</groupId>
   <artifactId>BVotifier-Master</artifactId>
-  <version>SNAPSHOT</version>
   <packaging>pom</packaging>
   <properties>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -44,4 +43,5 @@
   	<module>BVotifier-Bukkit</module>
   	<module>BVotifier</module>
   </modules>
+  <version>SNAPSHOT</version>
 </project>
