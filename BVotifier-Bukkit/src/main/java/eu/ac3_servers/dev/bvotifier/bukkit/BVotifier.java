@@ -22,7 +22,7 @@ public class BVotifier extends Votifier {
 	
 	private static final String ID = "bvotifier.596";
 	
-	@SuppressWarnings({ "static-access", "unused" })
+	@SuppressWarnings({ "static-access" })
 	@Override
 	public void onEnable() {
 		
@@ -45,9 +45,11 @@ public class BVotifier extends Votifier {
 		getLogger().info("[BV] Shutting down the listener!");
 		
 		this.config = new BVConfig(this);
+		this.config.getConfig().set("bungee", null);
+		this.config.saveConfig();
 		getLogger().info("[BV] Init BVConfig.");
 		
-		if( false == true && getBVConfig().getBoolean("both.updater")){
+		if(getBVConfig().getBoolean("both.updater")){
 			
 			getLogger().info("[DEBUG] Updating with ID: " + this.ID);
 			Updater updater = new Updater(this.ID, this);

@@ -68,7 +68,7 @@ public class BVotifier extends Plugin {
 
 	public boolean emptysend;
 	
-	@SuppressWarnings({ "static-access", "unused" })
+	@SuppressWarnings({ "static-access" })
 	@Override
 	public void onEnable() {
 		BVotifier.instance = this;
@@ -127,7 +127,7 @@ public class BVotifier extends Plugin {
 			getLogger().info("Port: " + port);
 		}
 		
-		if(updaterEnabled && false == true){
+		if(updaterEnabled){
 			
 			d("Updater is being initialised!");
 			UpdaterB updater = new UpdaterB(this.ID, this);
