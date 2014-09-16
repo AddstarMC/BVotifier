@@ -23,6 +23,13 @@ bungee:
     
     # Enable sending votes to servers that have no players on.
     emptysend: true
+
+    # Only send votes to the server the player is on
+    # If player is not online, sent the vote to the "RedirectIfNotOnline" server
+    SingleServerVote:
+        Enabled: false
+        RedirectIfNotOnline: lobby
+
 both:
     debug: false
     updater: true
