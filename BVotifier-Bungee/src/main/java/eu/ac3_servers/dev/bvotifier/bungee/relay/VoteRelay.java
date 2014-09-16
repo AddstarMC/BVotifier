@@ -35,6 +35,12 @@ public class VoteRelay implements Listener {
 	
 	@EventHandler
 	public void onVote(VotifierEvent e){
+	
+		if(!this.plugin.relayEnabled){
+			this.plugin.getLogger().warning("Vote received but not relayed!");
+			return;
+		}
+	
 		Vote vote = e.getVote();		
 		
 		ByteArrayOutputStream b = new ByteArrayOutputStream();
