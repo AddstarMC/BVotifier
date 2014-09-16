@@ -69,7 +69,10 @@ public class BVotifier extends Plugin {
 	public boolean emptysend;
 
 	public boolean singleServerVote;
+	
 	public String defaultVoteServer = "lobby";
+	
+	public boolean relayEnabled;
 	
 	@SuppressWarnings({ "static-access" })
 	@Override
@@ -125,7 +128,8 @@ public class BVotifier extends Plugin {
 		this.emptysend = cfg.getConfig().getBoolean("both.emptysend");
 		this.singleServerVote = cfg.getConfig().getBoolean("bungee.SingleServerVote.Enabled");
 		this.defaultVoteServer = cfg.getConfig().getString("bungee.SingleServerVote.RedirectIfNotOnline");
-
+		this.relayEnabled = cfg.getConfig().getBoolean("relayVotes");
+		
 		if (debug){
 			getLogger().info("DEBUG mode enabled!");
 			getLogger().info("Host: " + host);
