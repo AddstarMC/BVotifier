@@ -67,6 +67,9 @@ public class BVotifier extends Plugin {
 	public String voteVersion = "1.9";
 
 	public boolean emptysend;
+
+	public boolean singleServerVote;
+	public String defaultVoteServer = "lobby";
 	
 	@SuppressWarnings({ "static-access" })
 	@Override
@@ -120,6 +123,8 @@ public class BVotifier extends Plugin {
 		this.voteVersion = cfg.getConfig().getString("bungee.voteVersion");
 		boolean updaterEnabled = cfg.getConfig().getBoolean("both.updater");
 		this.emptysend = cfg.getConfig().getBoolean("both.emptysend");
+		this.singleServerVote = cfg.getConfig().getBoolean("bungee.SingleServerVote.Enabled");
+		this.defaultVoteServer = cfg.getConfig().getString("bungee.SingleServerVote.RedirectIfNotOnline");
 
 		if (debug){
 			getLogger().info("DEBUG mode enabled!");
