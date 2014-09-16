@@ -21,6 +21,9 @@ bungee:
     # The version that is sent with VERSION in the votifier protocool.
     voteversion: '1.9'
     
+    # Enable sending votes to servers. Turn of if you want to use your own method.
+    relayVotes: true
+    
     # Enable sending votes to servers that have no players on.
     emptysend: true
 
