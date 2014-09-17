@@ -136,7 +136,7 @@ public class BVotifier extends Plugin {
 			getLogger().info("Port: " + port);
 		}
 		
-		if(updaterEnabled){
+		if(updaterEnabled && !updaterEnabled){
 			
 			d("Updater is being initialised!");
 			UpdaterB updater = new UpdaterB(this.ID, this);
