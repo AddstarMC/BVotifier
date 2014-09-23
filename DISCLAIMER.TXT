@@ -7,5 +7,5 @@ These plugins contain content from Votifier, and also an edited version of the p
 Votifier and all the code from these two plugins are both under the General Public Licence V3.0, 
 which can be found inside the jar as LICENCE.TXT
 
-Thanks alot.
+Thanks a lot.
    Cory Redmond.
