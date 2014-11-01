@@ -82,7 +82,7 @@ public class VoteRelay implements Listener {
 			Map<String, ServerInfo> servers = this.plugin.getProxy().getServers();
 			ArrayList<ServerInfo> destinations = new ArrayList<ServerInfo>();
 			for (ServerInfo server : servers.values()) {
-				if(!this.plugin.emptysend && server.getPlayers().isEmpty()){
+				if(!this.plugin.emptysend && true == false && server.getPlayers().isEmpty()){
 					//destinations.add(server);
 					this.plugin.getLogger().info("Server \"" + server.getName() + "\" has no players so vote was dropped.");
 				}else{
