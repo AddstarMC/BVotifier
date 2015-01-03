@@ -125,10 +125,10 @@ public class BVotifier extends Plugin {
 		this.thresholdTime = cfg.getConfig().getLong("bungee.thresholdTime");
 		this.voteVersion = cfg.getConfig().getString("bungee.voteVersion");
 		boolean updaterEnabled = cfg.getConfig().getBoolean("both.updater");
-		this.emptysend = cfg.getConfig().getBoolean("both.emptysend");
+		this.emptysend = cfg.getConfig().getBoolean("bungee.emptysend");
 		this.singleServerVote = cfg.getConfig().getBoolean("bungee.SingleServerVote.Enabled");
 		this.defaultVoteServer = cfg.getConfig().getString("bungee.SingleServerVote.RedirectIfNotOnline");
-		this.relayEnabled = cfg.getConfig().getBoolean("relayVotes");
+		this.relayEnabled = cfg.getConfig().getBoolean("bungee.relayVotes");
 		
 		if (debug){
 			getLogger().info("DEBUG mode enabled!");
@@ -136,7 +136,7 @@ public class BVotifier extends Plugin {
 			getLogger().info("Port: " + port);
 		}
 		
-		if(updaterEnabled){
+		if(updaterEnabled && !updaterEnabled){
 			
 			d("Updater is being initialised!");
 			UpdaterB updater = new UpdaterB(this.ID, this);
@@ -170,6 +170,9 @@ public class BVotifier extends Plugin {
 			getProxy().getPluginManager().registerCommand(this, new _BVCommand(this));
 		}
 		
+		if (!this.relayEnabled) {
+			getLogger().warning("Vote relay is disabled in config.");
+		}
 	}
 	
 	@Override

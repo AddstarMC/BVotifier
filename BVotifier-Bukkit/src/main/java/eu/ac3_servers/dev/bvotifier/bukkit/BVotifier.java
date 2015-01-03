@@ -49,7 +49,7 @@ public class BVotifier extends Votifier {
 		this.config.saveConfig();
 		getLogger().info("[BV] Init BVConfig.");
 		
-		if(getBVConfig().getBoolean("both.updater")){
+		if(getBVConfig().getBoolean("both.updater") && !getBVConfig().getBoolean("both.updater")){
 			
 			getLogger().info("[DEBUG] Updating with ID: " + this.ID);
 			Updater updater = new Updater(this.ID, this);

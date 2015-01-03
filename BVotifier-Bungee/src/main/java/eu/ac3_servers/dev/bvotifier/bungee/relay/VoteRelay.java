@@ -69,9 +69,9 @@ public class VoteRelay implements Listener {
 			
 			if (server != null){
 				if(!this.plugin.emptysend && server.getPlayers().isEmpty()){
-					this.plugin.getLogger().info("Server: " + server.getName() + " has no players so dropped.");
+					this.plugin.getLogger().info("Server \"" + server.getName() + "\" has no players so vote was dropped.");
 				}else{
-					if(this.plugin.isDebug()) this.plugin.getLogger().info("Sending a vote to: " + server.getName() + "for " + vote.getUsername());
+					if(this.plugin.isDebug()) this.plugin.getLogger().info("Sending a vote to: " + server.getName() + " for " + vote.getUsername());
 					server.sendData(BVotifier.channelName, b.toByteArray());
 				}
 			}else{
@@ -82,11 +82,11 @@ public class VoteRelay implements Listener {
 			Map<String, ServerInfo> servers = this.plugin.getProxy().getServers();
 			ArrayList<ServerInfo> destinations = new ArrayList<ServerInfo>();
 			for (ServerInfo server : servers.values()) {
-				if(!this.plugin.emptysend && server.getPlayers().isEmpty()){
+				if(!this.plugin.emptysend && true == false && server.getPlayers().isEmpty()){
 					//destinations.add(server);
-					this.plugin.getLogger().info("Server: " + server.getName() + " has no players so dropped.");
+					this.plugin.getLogger().info("Server \"" + server.getName() + "\" has no players so vote was dropped.");
 				}else{
-					if(this.plugin.isDebug()) this.plugin.getLogger().info("Sending a vote to: " + server.getName() + "for " + vote.getUsername());
+					if(this.plugin.isDebug()) this.plugin.getLogger().info("Sending a vote to: " + server.getName() + " for " + vote.getUsername());
 					server.sendData(BVotifier.channelName, b.toByteArray());
 				}
 			}

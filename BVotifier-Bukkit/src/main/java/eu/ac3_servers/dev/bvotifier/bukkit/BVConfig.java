@@ -50,7 +50,9 @@ public class BVConfig {
 	}
 	
 	public FileConfiguration getConfig() {
-	    reloadCustomConfig();
+	    if (customConfig == null) {
+		reloadCustomConfig();
+	    }
 	    return customConfig;
 	}
 
