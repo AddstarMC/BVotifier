@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.*;
 
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -66,6 +65,9 @@ public class Votifier extends JavaPlugin {
 	/** Debug mode flag */
 	private boolean debug;
 
+	/** Strack trace **/
+	private boolean doStackTrace = false;
+
 	/**
 	 * Attach custom log filter to logger.
 	 */
@@ -92,16 +94,6 @@ public class Votifier extends JavaPlugin {
 				.replace("\\", "/") + "/listeners";
 
 		/*
-		 * Use IP address from server.properties as a default for
-		 * configurations. Do not use InetAddress.getLocalHost() as it most
-		 * likely will return the main server address instead of the address
-		 * assigned to the server.
-		 */
-		String hostAddr = Bukkit.getServer().getIp();
-		if (hostAddr == null || hostAddr.length() == 0)
-			hostAddr = "0.0.0.0";
-
-		/*
 		 * Create configuration file if it does not exists; otherwise, load it
 		 */
 		if (!config.exists()) {
@@ -112,21 +104,7 @@ public class Votifier extends JavaPlugin {
 				// Initialize the configuration file.
 				config.createNewFile();
 
-				cfg.set("host", hostAddr);
-				cfg.set("port", 8192);
 				cfg.set("debug", false);
-
-				/*
-				 * Remind hosted server admins to be sure they have the right
-				 * port number.
-				 */
-				LOG.info("------------------------------------");
-				//LOG.info("Assigning Votifier to listen on port 8192. If you are hosting Craftbukkit on a");
-				//LOG.info("shared server please check with your hosting provider to verify that this port");
-				//LOG.info("is available for your use. Chances are that your hosting provider will assign");
-				LOG.info("Votifier isn't opening any ports!");
-				LOG.info("------------------------------------");
-
 				cfg.set("listener_folder", listenerDirectory);
 				cfg.save(config);
 			} catch (Exception ex) {
@@ -164,15 +142,12 @@ public class Votifier extends JavaPlugin {
 		listeners.addAll(ListenerLoader.load(listenerDirectory));
 
 		// Initialize the receiver.
-		@SuppressWarnings("unused")
-		String host = cfg.getString("host", hostAddr);
-		int port = cfg.getInt("port", 8192);
 		debug = cfg.getBoolean("debug", false);
 		if (debug)
 			LOG.info("DEBUG mode enabled!");
 
 		try {
-			voteReceiver = new VoteReceiver(this, "127.0.0.13", port);
+			voteReceiver = new VoteReceiver(this, "127.0.0.1", 1234);
 			voteReceiver.start();
 
 			LOG.info("Votifier enabled.");
@@ -243,6 +218,14 @@ public class Votifier extends JavaPlugin {
 
 	public boolean isDebug() {
 		return debug;
+	}
+
+	public boolean doStackTrace() {
+		return doStackTrace;
+	}
+
+	public void setDoStackTrace(boolean doStackTrace) {
+		this.doStackTrace = doStackTrace;
 	}
 
 }

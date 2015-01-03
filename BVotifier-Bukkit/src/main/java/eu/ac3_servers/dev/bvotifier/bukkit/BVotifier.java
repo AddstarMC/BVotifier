@@ -41,8 +41,8 @@ public class BVotifier extends Votifier {
 			
 		super.onEnable();
 		
-		getVoteReceiver().shutdown();
-		getLogger().info("[BV] Shutting down the listener!");
+		//getVoteReceiver().shutdown();
+		//getLogger().info("[BV] Shutting down the listener!");
 		
 		this.config = new BVConfig(this);
 		this.config.getConfig().set("bungee", null);
