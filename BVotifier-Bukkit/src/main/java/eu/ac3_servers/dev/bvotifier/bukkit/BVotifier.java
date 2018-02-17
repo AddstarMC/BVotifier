@@ -3,8 +3,6 @@ package eu.ac3_servers.dev.bvotifier.bukkit;
 import java.io.File;
 import java.io.IOException;
 
-import net.komputerking.updater.Updater;
-
 import org.apache.commons.io.FileUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -40,24 +38,10 @@ public class BVotifier extends Votifier {
 		}
 			
 		super.onEnable();
-		
-		//getVoteReceiver().shutdown();
-		//getLogger().info("[BV] Shutting down the listener!");
-		
 		this.config = new BVConfig(this);
 		this.config.getConfig().set("bungee", null);
 		this.config.saveConfig();
 		getLogger().info("[BV] Init BVConfig.");
-		
-		if(getBVConfig().getBoolean("both.updater") && !getBVConfig().getBoolean("both.updater")){
-			
-			getLogger().info("[DEBUG] Updating with ID: " + this.ID);
-			Updater updater = new Updater(this.ID, this);
-			getLogger().info("[DEBUG] Initilised the updater.");
-			updater.performUpdateCheck();
-			
-		}
-		
 		this.getServer().getMessenger().registerIncomingPluginChannel(this, MessageChannel, new PMListener(this));
 		getLogger().info("[BV] Registered \"" + this.MessageChannel + "\" as an incoming channel!");
 		
@@ -78,7 +62,7 @@ public class BVotifier extends Votifier {
 			return true;
 		}else if(command.getName().equalsIgnoreCase("votifier")){
 			sender.sendMessage(ChatColor.YELLOW + "[Votifier] " + ChatColor.BLUE + "Bungeecord Votifier "+ ChatColor.GREEN + "v"+getDescription().getVersion());
-			sender.sendMessage(ChatColor.YELLOW + "[Votifier] " + ChatColor.BLUE + "Thanks a lot, acecheesecr14 " + ChatColor.RED + "<3");
+			sender.sendMessage(ChatColor.YELLOW + "[Votifier] " + ChatColor.BLUE + "Thanks a lot " + ChatColor.RED + "<3");
 		}
 		return false;
 	}

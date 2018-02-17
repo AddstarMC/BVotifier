@@ -1,7 +1,6 @@
 package eu.ac3_servers.dev.bvotifier.bungee;
 
 import java.io.File;
-//import java.io.IOException;
 import java.security.KeyPair;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,6 @@ import eu.ac3_servers.dev.bvotifier.bungee.model.VoteListener;
 import eu.ac3_servers.dev.bvotifier.bungee.net.VoteReceiver;
 import eu.ac3_servers.dev.bvotifier.bungee6.commands._BVCommand;
 import eu.ac3_servers.dev.bvotifier.bungee6.commands._testVoteCommand;
-import net.komputerking.updater.*;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.scheduler.ScheduledTask;
 
@@ -135,16 +133,7 @@ public class BVotifier extends Plugin {
 			getLogger().info("Host: " + host);
 			getLogger().info("Port: " + port);
 		}
-		
-		if(updaterEnabled && !updaterEnabled){
-			
-			d("Updater is being initialised!");
-			UpdaterB updater = new UpdaterB(this.ID, this);
-			d("Using ID: " + this.ID);
-			updater.performUpdateCheck();
-			
-		}
-		
+
 		// Initialize the receiver.
 		try {
 			voteReceiver = new VoteReceiver(this, host, port);
