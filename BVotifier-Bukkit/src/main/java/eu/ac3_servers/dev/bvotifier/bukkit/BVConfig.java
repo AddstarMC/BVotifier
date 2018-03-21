@@ -1,10 +1,6 @@
 package eu.ac3_servers.dev.bvotifier.bukkit;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.logging.Level;
 
 import org.bukkit.configuration.file.FileConfiguration;
@@ -38,12 +34,15 @@ public class BVConfig {
 	    // Look for defaults in the jar
 	    Reader defConfigStream;
 		try {
-			defConfigStream = new InputStreamReader(this.plugin.getResource("bvconfig.yml"), "UTF8");
-		    if (defConfigStream != null) {
-		        YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
-		        customConfig.setDefaults(defConfig);
-		        saveConfig();
-		    }
+			InputStream stream = this.plugin.getResource("bvconfig.yml");
+			if(stream !=null) {
+				defConfigStream = new InputStreamReader(stream, "UTF8");
+				if (defConfigStream != null) {
+					YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
+					customConfig.setDefaults(defConfig);
+					saveConfig();
+				}
+			}
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}

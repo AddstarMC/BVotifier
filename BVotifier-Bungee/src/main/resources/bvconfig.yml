@@ -37,4 +37,4 @@ both:
     debug: false
     updater: true
     # DO NOT CHANGE THIS UNLESS YOU WANT THE CONFIG RESET.
-    configVersion: ${pom.version}
+    configVersion: ${project.version}
