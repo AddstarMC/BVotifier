@@ -1,0 +1,40 @@
+# Configuration for BVotifier ${project.version} .    #
+# Please use YAML only! NO TABS. 4 spaces instead.#
+###################################################
+# Thanks, acecheesecr14.                          #
+###################################################
+bungee:
+    # These options are for bungeecord only.
+    hostname: '0.0.0.0'
+    port: 8192
+
+    # The below is currently experimental.
+    # Enable at your own risk.
+    enableThreshold: false
+    # The time in milliseconds that an IP has to wait before reconnecting.
+    thresholdTime: 200
+
+    # If this is true, then this will be compatable with 1.6 bungeecord.
+    StartupOptions:
+        v1_6: false
+        
+    # The version that is sent with VERSION in the votifier protocool.
+    voteversion: '1.9'
+    
+    # Enable sending votes to servers. Turn of if you want to use your own method.
+    relayVotes: true
+    
+    # Enable sending votes to servers that have no players on.
+    emptysend: true
+
+    # Only send votes to the server the player is on
+    # If player is not online, sent the vote to the "RedirectIfNotOnline" server
+    SingleServerVote:
+        Enabled: false
+        RedirectIfNotOnline: lobby
+
+both:
+    debug: false
+    updater: true
+    # DO NOT CHANGE THIS UNLESS YOU WANT THE CONFIG RESET.
+    configVersion: ${project.version}
