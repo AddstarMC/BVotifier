@@ -3,6 +3,7 @@ version: ${project.version}
 author: Cory Redmond
 description: THIS IS THE BUNGEECORD VOTIFIER.
 main: eu.ac3_servers.dev.bvotifier.bukkit.BVotifier
+api-version: ${spigot.api.version}
 commands:
   votifier:
     description: Toggles debugging.
